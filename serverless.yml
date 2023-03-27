@@ -1,0 +1,32 @@
+
+service: backend
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  region: us-east-1
+  role: arn:aws:iam::308808321930:role/lambda-polly-role
+
+functions:
+  hello:
+    handler: handler.hello
+    events:
+      - http:
+          path: hello
+          method: post
+          cors: true
+  saveEventAudio:
+    handler: saveEventAudio.saveTextToMp3
+    events:
+      - http:
+          path: saveEventAudio
+          method: post
+          cors: true
+  getEventAudio:
+    handler: getEventAudio.getMp3FromS3
+    events:
+      - http:
+          path: getEventAudio
+          method: post
+          cors: true
+

@@ -1,0 +1,17 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "serverless deploy",
+    "local-saveEventAudio": "serverless invoke local --function saveEventAudio --path libs/data/saveTextToMp3.json",
+    "local-getEventAudio": "serverless invoke local --function getEventAudio --path libs/data/getMp3FromS3.json"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.1333.0"
+  }
+}
